@@ -22,18 +22,26 @@ export const MainS = styled.main`
     color: white;
     cursor: pointer;
 
-    &:hover {
+    :hover {
       background-color: gray;
     }
   }
 `;
 
-export const ItemS = styled.li`
-  background-color: ${({ theme }) => theme.colors.primary};
-`;
 
 export const ListS = styled.ul`
   background-color: green;
+  width: 200px;
+`;
+
+export const ItemS = styled.li`
+  width: 80%;
+
+  /* SINTAXE CORRETA - O COMPONENTE PAI QUE DEVE SER REFERENCIADO */
+  /* https://styled-components.com/docs/advanced#referring-to-other-components */
+  ${ListS}:hover & {
+    background-color: blue;
+  }
 `;
 
 export const MyLinkS = styled(Link)`
